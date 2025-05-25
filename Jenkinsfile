@@ -1,10 +1,16 @@
 pipeline {
-    agent { docker { image 'python:latest' } }
+    agent { label 'docker' }
     stages {
-        stage('pull') {
+        stage('python test') {
+             agent {
+        docker {
+          label 'docker'
+          image 'python:3.10-alpine'
             steps {
                 sh 'python --version'
             }
         }
+    }
+}
     }
 }
