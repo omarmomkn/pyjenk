@@ -8,9 +8,9 @@ pipeline {
           image 'python:3.10-alpine'
             steps {
                 sh 'python --version'
+                    }
+                }
             }
         }
-    }
-}
     }
 }
